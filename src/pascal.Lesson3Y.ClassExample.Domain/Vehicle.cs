@@ -1,9 +1,23 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
+using System.Formats.Tar;
+using System.Runtime.Serialization;
 using System.Text;
 
 namespace pascal.Lesson3Y.ClassExample.Domain
 {
+    /// <summary>
+    /// Ogni veicolo è caratterizzato da:
+    /// Una targa(LicensePlate)
+    /// Il chilometraggio attuale(OdometerKm)
+    /// La tariffa giornaliera di noleggio(DailyRate)
+    /// Il livello percentuale di carburante nel serbatoio(FuelLevelPercentage)
+    /// Il Modello deve:
+    /// Impedire la creazione di veicoli con valori incoerenti(es.targa non valida, chilometri o tariffe negative).
+    /// Permetta di registrare i viaggi effettuati, incrementando il chilometraggio e riducendo il carburante residuo.
+    /// Consentire di effettuare il rifornimento fino a un massimo del 100 % della capienza del serbatoio.
+    /// </summary>
     public class Vehicle
     {        
         private int _odometerKm;
