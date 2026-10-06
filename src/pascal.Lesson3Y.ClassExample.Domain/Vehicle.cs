@@ -5,7 +5,7 @@ using System.Formats.Tar;
 using System.Runtime.Serialization;
 using System.Text;
 
-namespace pascal.Lesson3Y.ClassExample.Domain
+namespace pascal.Lesson3E.ClassExample.Domain
 {
     /// <summary>
     /// Ogni veicolo è caratterizzato da:
@@ -37,7 +37,17 @@ namespace pascal.Lesson3Y.ClassExample.Domain
                 _odometerKm = value;
             }
         }
-        public double DailyRate { get; private set;  }
+        public double DailyRate 
+        { 
+            get
+            { return _dailyRate; }
+            private set
+            {
+                if(value < 0)
+                    throw new ArgumentException($"value not allowed {nameof(DailyRate)}: {value} ");
+                _dailyRate = value;
+            }
+        }
 
         public double FuelLevelPercentage 
         {  

@@ -1,9 +1,9 @@
-﻿using pascal.Lesson3Y.ClassExample.Domain;
+﻿using pascal.Lesson3E.ClassExample.Domain;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace pascal.Lesson3Y.ClassExample.UIConsole
+namespace pascal.Lesson3E.ClassExample.UIConsole
 {
     internal class Program
     {
