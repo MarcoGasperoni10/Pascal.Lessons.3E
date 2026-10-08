@@ -24,7 +24,7 @@ namespace pascal.Lesson3E.ClassExample.Domain
         private double _dailyRate;
         private double _fuelLevelPercentage;
 
-        public string LicensePlate { get; private set; }
+        public string LicensePlate { get; private set; }//@TODO: implentare il set per la validazione della targa
         public int OdometerKm
         {
             get
@@ -68,8 +68,7 @@ namespace pascal.Lesson3E.ClassExample.Domain
         /// </summary>
         /// <param name="licensePlate"></param>
         public Vehicle(string licensePlate)
-        {
-            //TODO: validazione della targa
+        {            
             LicensePlate = licensePlate; //chiama al set           
         }
 
@@ -82,7 +81,7 @@ namespace pascal.Lesson3E.ClassExample.Domain
         /// <param name="fuelLevelPercentage"></param>
         public Vehicle(string licensePlate, int odometerKm, 
             double dailyRate, double fuelLevelPercentage) 
-        { 
+        {
             LicensePlate = licensePlate;
             OdometerKm = odometerKm; //chiamata al set
             DailyRate = dailyRate;
