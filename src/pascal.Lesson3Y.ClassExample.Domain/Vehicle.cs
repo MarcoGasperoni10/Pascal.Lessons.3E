@@ -19,12 +19,28 @@ namespace pascal.Lesson3E.ClassExample.Domain
     /// Consentire di effettuare il rifornimento fino a un massimo del 100 % della capienza del serbatoio.
     /// </summary>
     public class Vehicle
-    {        
+    {
+        private string _licensePlate;
         private int _odometerKm;
         private double _dailyRate;
         private double _fuelLevelPercentage;
 
-        public string LicensePlate { get; private set; }//@TODO: implentare il set per la validazione della targa
+        public string LicensePlate 
+        { 
+            get
+            {
+                return _licensePlate;
+            }
+            private set
+            {
+                if (value.Length != 7)
+                    throw new ArgumentException($"value not allowed {nameof(LicensePlate)}: {value}");
+                if (!char.IsLetter(value[0]) || !char.IsLetter(value[1]) || !char.IsLetter(value[5]) || !char.IsLetter(value[6]))
+                    throw new ArgumentException($"value not allowed {nameof(LicensePlate)}: {value}");
+                if (!char.IsDigit(value[2]) || !char.IsDigit(value[3]))
+                    throw new ArgumentException($"value not allowed {nameof(LicensePlate)}: {value}");
+            }
+        }
         public int OdometerKm
         {
             get
