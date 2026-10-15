@@ -33,11 +33,14 @@ namespace pascal.Lesson3E.ClassExample.Domain
             }
             private set
             {
+                // controllo lunghezza
                 if (value.Length != 7)
                     throw new ArgumentException($"value not allowed {nameof(LicensePlate)}: {value}");
+                // controllo lettere
                 if (!char.IsLetter(value[0]) || !char.IsLetter(value[1]) || !char.IsLetter(value[5]) || !char.IsLetter(value[6]))
                     throw new ArgumentException($"value not allowed {nameof(LicensePlate)}: {value}");
-                if (!char.IsDigit(value[2]) || !char.IsDigit(value[3]))
+                // controllo numeri
+                if (!char.IsDigit(value[2]) || !char.IsDigit(value[3]) || !char.IsDigit(value[4]))
                     throw new ArgumentException($"value not allowed {nameof(LicensePlate)}: {value}");
             }
         }
