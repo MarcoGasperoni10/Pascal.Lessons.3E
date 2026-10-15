@@ -25,6 +25,7 @@ namespace pascal.Lesson3E.ClassExample.Domain
         private double _dailyRate;
         private double _fuelLevelPercentage;
 
+        public static double MaxFuelLevelPercentage { get; } = 100.0;
         public string LicensePlate 
         { 
             get
@@ -88,7 +89,7 @@ namespace pascal.Lesson3E.ClassExample.Domain
         /// <param name="licensePlate"></param>
         public Vehicle(string licensePlate)
         {            
-            LicensePlate = licensePlate; //chiama al set           
+            LicensePlate = licensePlate; //chiama al set
         }
 
         /// <summary>
@@ -98,8 +99,7 @@ namespace pascal.Lesson3E.ClassExample.Domain
         /// <param name="odometerKm"></param>
         /// <param name="dailyRate"></param>
         /// <param name="fuelLevelPercentage"></param>
-        public Vehicle(string licensePlate, int odometerKm, 
-            double dailyRate, double fuelLevelPercentage) 
+        public Vehicle(string licensePlate, int odometerKm, double dailyRate, double fuelLevelPercentage) 
         {
             LicensePlate = licensePlate;
             OdometerKm = odometerKm; //chiamata al set

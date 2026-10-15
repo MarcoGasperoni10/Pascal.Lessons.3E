@@ -33,10 +33,6 @@ namespace pascal.Lesson3E.ClassExample.UIConsole
             {
                 Console.WriteLine(ex.Message);
             }
-
-            
-            
-
         }
     }
 }
